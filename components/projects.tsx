@@ -1,22 +1,31 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github } from "lucide-react"
-import { useInView } from "react-intersection-observer"
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: false,
-  })
+  });
 
   const projects = [
+    {
+      title: "Talent Sphere Africa",
+      description:
+        "A social networking platform with real-time messaging, post creation, and user profiles.",
+      image: "/ts.png",
+      tags: ["Next.js", "TypeScript", "React Query", "Zustand", "Tailwind CSS"],
+      demoLink: "https://talentsphereafrica.com/",
+      githubLink: "#",
+    },
     {
       title: "Vendease Website",
       description:
@@ -31,46 +40,46 @@ export default function Projects() {
       description:
         "Contributed to the development of Vendease’s enterprise restaurant management system, collaborating with designers and back-end engineers to build responsive, user-friendly interfaces in Angular.",
       image: "/vrms.png",
-      tags: ["Angular", "Angular Material", "RxJs", "TailwindCSS", "TypeScript"],
+      tags: [
+        "Angular",
+        "Angular Material",
+        "RxJs",
+        "TailwindCSS",
+        "TypeScript",
+      ],
       demoLink: "https://vend-rms.vendease.com/",
       githubLink: "#",
     },
-    {
-      title: "Social Media Platform",
-      description: "A social networking platform with real-time messaging, post creation, and user profiles.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
-      demoLink: "#",
-      githubLink: "#",
-    },
-  ]
+  ];
 
   // Magnetic button effect
-  const [magneticProps, setMagneticProps] = useState({ x: 0, y: 0 })
+  const [magneticProps, setMagneticProps] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const button = e.currentTarget
-    const { left, top, width, height } = button.getBoundingClientRect()
-    const x = e.clientX - left - width / 2
-    const y = e.clientY - top - height / 2
-    const distance = Math.sqrt(x * x + y * y)
-    const maxDistance = Math.sqrt((width / 2) * (width / 2) + (height / 2) * (height / 2))
+    const button = e.currentTarget;
+    const { left, top, width, height } = button.getBoundingClientRect();
+    const x = e.clientX - left - width / 2;
+    const y = e.clientY - top - height / 2;
+    const distance = Math.sqrt(x * x + y * y);
+    const maxDistance = Math.sqrt(
+      (width / 2) * (width / 2) + (height / 2) * (height / 2)
+    );
 
     if (distance < maxDistance) {
       // Scale the effect based on distance from center
-      const strength = 15 * (1 - distance / maxDistance)
+      const strength = 15 * (1 - distance / maxDistance);
       setMagneticProps({
         x: (x * strength) / maxDistance,
         y: (y * strength) / maxDistance,
-      })
+      });
     } else {
-      setMagneticProps({ x: 0, y: 0 })
+      setMagneticProps({ x: 0, y: 0 });
     }
-  }
+  };
 
   const handleMouseLeave = () => {
-    setMagneticProps({ x: 0, y: 0 })
-  }
+    setMagneticProps({ x: 0, y: 0 });
+  };
 
   return (
     <section id="projects" className="py-20 px-4 md:px-8 bg-muted/30">
@@ -84,8 +93,8 @@ export default function Projects() {
           My <span className="text-primary">Projects</span>
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-          Here are some of my recent projects. Each one was built to solve a specific problem or explore new
-          technologies.
+          Here are some of my recent projects. Each one was built to solve a
+          specific problem or explore new technologies.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -111,7 +120,9 @@ export default function Projects() {
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-4">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
@@ -134,7 +145,8 @@ export default function Projects() {
                     onMouseLeave={handleMouseLeave}
                     style={{
                       transform: `translate(${magneticProps.x}px, ${magneticProps.y}px)`,
-                      transition: magneticProps.x === 0 ? "transform 0.5s ease" : "none",
+                      transition:
+                        magneticProps.x === 0 ? "transform 0.5s ease" : "none",
                     }}
                   >
                     <span className="relative z-10">
@@ -155,7 +167,8 @@ export default function Projects() {
                     onMouseLeave={handleMouseLeave}
                     style={{
                       transform: `translate(${magneticProps.x}px, ${magneticProps.y}px)`,
-                      transition: magneticProps.x === 0 ? "transform 0.5s ease" : "none",
+                      transition:
+                        magneticProps.x === 0 ? "transform 0.5s ease" : "none",
                     }}
                   >
                     <span className="relative z-10">
@@ -178,6 +191,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
