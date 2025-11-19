@@ -50,6 +50,15 @@ export default function Projects() {
       demoLink: "https://vend-rms.vendease.com/",
       githubLink: "#",
     },
+    {
+      title: "AI Chat Asisstant",
+      description:
+        "A full-stack Next.js application with TypeScript and Tailwind CSS featuring real-time API communication, Markdown rendering, and persistent chat history using localStorage.",
+      image: "/ai-assisstant.png",
+      tags: ["Next.js", "Open AI API", "groq", "TailwindCSS", "TypeScript"],
+      demoLink: "https://ask-the-ai-mu.vercel.app/",
+      githubLink: "https://github.com/Oluwaniphise/ask-the-ai",
+    },
   ];
 
   // Magnetic button effect
