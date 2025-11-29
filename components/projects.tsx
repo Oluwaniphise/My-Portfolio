@@ -59,6 +59,23 @@ export default function Projects() {
       demoLink: "https://ask-the-ai-mu.vercel.app/",
       githubLink: "https://github.com/Oluwaniphise/ask-the-ai",
     },
+    {
+      title: "J.A.D",
+      description:
+        "A functional, secure job board that includes job posting CRUD, user authentication, and a robust application tracking system (ATS) interface for employers, demonstrating competency across the entire software development lifecycle.",
+      image: "/jad.png",
+      tags: [
+        "Next.js",
+        "Nestjs",
+        "MongoDB",
+        "Mongoose",
+        "TailwindCSS",
+        "TypeScript",
+        "Docker",
+      ],
+      demoLink: "https://job-board-napn.onrender.com/",
+      githubLink: "https://github.com/Oluwaniphise/job-board-api",
+    },
   ];
 
   // Magnetic button effect

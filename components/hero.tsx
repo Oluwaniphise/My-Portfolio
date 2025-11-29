@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");
-  const fullText = "Front-End Developer";
+  const fullText = "Full Stack Developer";
 
   useEffect(() => {
     if (typedText.length < fullText.length) {
