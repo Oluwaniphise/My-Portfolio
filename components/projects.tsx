@@ -76,6 +76,15 @@ export default function Projects() {
       demoLink: "https://job-board-front-end-rho.vercel.app/",
       githubLink: "https://github.com/Oluwaniphise/job-board-api",
     },
+    {
+      title: "Tridehq",
+      description:
+        "Tride helps you receive funds faster from your members and donors with dedicated bank accounts and online payment options.",
+      image: "/tride.png",
+      tags: ["Webflow"],
+      demoLink: "https://tridehq.webflow.io/",
+      githubLink: "#",
+    },
   ];
 
   // Magnetic button effect
