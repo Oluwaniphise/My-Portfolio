@@ -73,7 +73,7 @@ export default function Projects() {
         "TypeScript",
         "Docker",
       ],
-      demoLink: "https://job-board-napn.onrender.com/",
+      demoLink: "https://job-board-front-end-rho.vercel.app/",
       githubLink: "https://github.com/Oluwaniphise/job-board-api",
     },
   ];
